@@ -68,7 +68,6 @@ def download_robot_summary(request):
         return response
 
 
-
 @csrf_exempt
 def request_robot(request):
     # Замените на реальную модель
