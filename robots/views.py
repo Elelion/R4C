@@ -53,19 +53,7 @@ def request_robot(request):
     return JsonResponse({'message': 'GET-запрос обработан'}, status=200)
 
 
-def download_robot_summary(request):
-    # Вызов функции для создания файла
-    excel_file = create_robot_summary_excel()
 
-    # Отправка файла как ответ на запрос
-    with open(excel_file, 'rb') as file:
-        # для загрузки с браузера
-        # response = HttpResponse(file.read(), content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-
-        # для загрузки в проект
-        response = FileResponse(file)
-        response['Content-Disposition'] = 'attachment; filename="robot_summary.xlsx"'
-        return response
 
 
 
